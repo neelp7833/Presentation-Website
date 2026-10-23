@@ -647,311 +647,6 @@ img{max-width:100%}
 })();
 </script>
 
-<section id="hook" class="band dark" data-title="Two giants, one secret">
-  <div class="wrap hook-wrap">
-    <h2 class="rv">Two Indian giants. One shared secret.</h2>
-    <div class="hook-lbl lbl rv" style="--d:.15s">
-      <i class="tape" style="left:46%;top:-14px;rotate:3deg"></i>
-      <div class="hook-side">
-        <p class="label hook-k">Selling side</p>
-        <p class="hook-name">Meesho</p>
-        <p class="hook-who"><b>Vidit Aatrey &amp; Sanjeev Barnwal</b><br>IIT Delhi graduates. Started Meesho in 2015.</p>
-        <dl class="hook-nums">
-          <div><dt>234 million</dt><dd>people bought on Meesho in a year</dd></div>
-          <div><dt>15 million</dt><dd>resellers who never held stock</dd></div>
-          <div><dt>~₹8,600 crore</dt><dd>Vidit's stake after the IPO (~$1 billion)</dd></div>
-        </dl>
-      </div>
-      <div class="hook-side">
-        <p class="label hook-k">Supplier side</p>
-        <p class="hook-name">IndiaMART</p>
-        <p class="hook-who"><b>Dinesh Agarwal &amp; Brijesh Agrawal</b><br>Dinesh quit his job at HCL. Started IndiaMART in 1996 from a house in Delhi.</p>
-        <dl class="hook-nums">
-          <div><dt>8.8 million</dt><dd>supplier storefronts</dd></div>
-          <div><dt>~60%</dt><dd>share of India's online B2B market</dd></div>
-          <div><dt>36 times</dt><dd>oversubscribed at its 2019 IPO</dd></div>
-        </dl>
-      </div>
-      <div class="hook-foot">
-        <svg class="hook-bar" aria-hidden="true"></svg>
-        <p class="hook-stamp stencil" aria-label="What is their secret?">What is<br>their secret?</p>
-      </div>
-    </div>
-    <p class="hook-src">Sources: Meesho IPO filing; Storyboard18 (Dec 2025); IndiaMART Q1 FY27 results; dineshagarwal.com</p>
-  </div>
-</section>
-<style>
-  .hook-wrap{display:grid;gap:clamp(20px,3.4vh,36px);max-width:1180px}
-  #hook h2{max-width:20ch;color:var(--paper)}
-  .hook-lbl{display:grid;grid-template-columns:1fr 1fr;rotate:.6deg}
-  .hook-side{padding:clamp(18px,2.4vw,30px);display:grid;gap:10px;align-content:start}
-  .hook-side + .hook-side{border-left:2px solid var(--ink)}
-  #hook .hook-k{color:var(--ink);border:1.5px solid var(--ink);justify-self:start;padding:4px 7px;border-radius:2px}
-  .hook-name{font:900 clamp(44px,5vw,72px)/.9 var(--font-display);font-variation-settings:'wdth' 66;letter-spacing:-.02em}
-  .hook-who{font-size:15px;line-height:1.45;color:var(--muted);max-width:40ch}
-  .hook-who b{color:var(--ink);font-weight:700}
-  .hook-nums{margin:6px 0 0;display:grid;border-top:1.5px solid var(--ink)}
-  .hook-nums div{display:grid;grid-template-columns:minmax(150px,auto) 1fr;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px dashed var(--line-2)}
-  .hook-nums dt{font:800 clamp(22px,2vw,28px)/1.05 var(--font-display);font-variation-settings:'wdth' 75;font-variant-numeric:tabular-nums}
-  .hook-nums dd{margin:0;font-size:14.5px;line-height:1.35}
-  .hook-foot{grid-column:1/-1;display:flex;gap:22px;align-items:center;border-top:2px solid var(--ink);padding:12px clamp(18px,2.4vw,30px)}
-  .hook-src{font:400 11px/1.4 var(--font-label);color:rgba(244,239,228,.5);margin-top:-14px}
-  .hook-foot{position:relative;min-height:64px}
-  .hook-bar{width:200px;height:34px;flex:0 0 auto;color:var(--ink)}
-  /* the rubber stamp: lands whole, like ink, no glide */
-  .hook-stamp{position:absolute;right:clamp(14px,3vw,40px);bottom:10px;margin:0;color:var(--red);
-    font-size:clamp(24px,2.5vw,36px);text-transform:uppercase;text-align:center;padding:10px 16px;
-    border:4px double var(--red);border-radius:6px;rotate:-7deg;filter:url(#ink);mix-blend-mode:multiply;background:rgba(251,249,244,.0)}
-  .js .hook-stamp{opacity:0;scale:1.18}
-  .hook-stamp.on{opacity:.92;scale:1;transition:opacity .12s steps(2),scale .12s steps(2)}
-  html.hz-on #hook{--cps-split:no}
-  html.calm.js .hook-stamp{opacity:.92;scale:1}
-</style>
-<script>
-(() => {
-  const s = $('#hook');
-  barcode($('.hook-bar', s), 'meesho indiamart', 200, 34);
-  const st = $('.hook-stamp', s);
-  onView($('.hook-lbl', s), () => setTimeout(() => st.classList.add('on'), FINAL ? 0 : 1500), .5);
-})();
-</script>
-
-<section id="answer" class="band sheet" data-title="The secret: dropshipping">
-  <div class="wrap ans-wrap">
-    <div class="ans-head">
-      <h2 class="rv">The secret has a name: dropshipping</h2>
-      <p class="ans-line rv" style="--d:.1s">The store takes the order. The supplier ships the box. The store <mark>never touches the product.</mark></p>
-    </div>
-    <svg class="ans-svg" viewBox="0 0 1120 470" role="img" aria-label="Two routes. Normal store: supplier to warehouse to customer, and the shop owner carries the stock risk. Dropshipping: the customer's order goes to the online store and on to the supplier, and the supplier ships straight to the customer. The warehouse is crossed out.">
-      <!-- lane A: normal store -->
-      <text x="0" y="22" class="svg-label">Traditional retail</text>
-      <text x="0" y="44" style="font:800 22px var(--font-display);font-variation-settings:'wdth' 75">Normal store route</text>
-      <g class="ans-a">
-        <path class="ln" d="M40 190 V120 L66 104 V120 L92 104 V120 L118 104 V120 L136 110 V190"/>
-        <path class="ln" d="M470 190 V128 L540 96 L610 128 V190 M488 190 V146 H592 V190"/>
-        <path class="ln" d="M940 190 V138 L980 108 L1020 138 V190"/>
-        <path class="ln thin" d="M150 176 H456" marker-end="url(#arr)"/>
-        <path class="ln thin" d="M624 176 H926" marker-end="url(#arr)"/>
-        <path class="ln" d="M20 190 H1060"/>
-      </g>
-      <g class="ans-boxes">
-        <use href="#parcel" x="0" y="0" transform="translate(508 188)"/><use href="#parcel" transform="translate(538 188)"/><use href="#parcel" transform="translate(568 188)"/>
-        <use href="#parcel" transform="translate(523 166)"/><use href="#parcel" transform="translate(553 166)"/><use href="#parcel" transform="translate(538 144)"/>
-      </g>
-      <text x="88" y="214" text-anchor="middle" class="svg-label">Supplier</text>
-      <text x="540" y="214" text-anchor="middle" class="svg-label">Warehouse</text>
-      <text x="980" y="214" text-anchor="middle" class="svg-label">Customer</text>
-      <text x="304" y="164" text-anchor="middle" style="font:500 12px var(--font-label)" fill="var(--muted)">buys upfront</text>
-      <text x="776" y="164" text-anchor="middle" style="font:500 12px var(--font-label)" fill="var(--muted)">ships later</text>
-      <text class="svg-hand rv" x="640" y="92" style="--d:1.6s">risk sits with the shop owner</text>
-
-      <path d="M0 262 H1080" stroke="var(--line-2)" stroke-width="1" stroke-dasharray="2 6"/>
-
-      <!-- lane B: dropshipping -->
-      <text x="0" y="300" class="svg-label" fill="var(--blue)" style="fill:var(--blue)">Dropshipping model</text>
-      <text x="0" y="322" style="font:800 22px var(--font-display);font-variation-settings:'wdth' 75">Direct supplier dispatch</text>
-      <g class="ans-b">
-        <path class="ln" d="M40 452 V382 L66 366 V382 L92 366 V382 L118 366 V382 L136 372 V452"/>
-        <path class="ln" d="M940 452 V400 L980 370 L1020 400 V452"/>
-        <path class="ln" d="M20 452 H1060"/>
-        <rect class="ln f-card" x="506" y="300" width="68" height="112" rx="11"/>
-        <path class="ln thin" d="M518 318 h44 v12 h-44z M518 338 h20 v20 h-20z M542 338 h20 v20 h-20z M518 362 h20 v20 h-20z M542 362 h20 v20 h-20z"/>
-      </g>
-      <path class="ln guide" d="M470 452 V390 L540 358 L610 390 V452" style="opacity:.35"/>
-      <path class="ln red fat ans-x" d="M480 404 L600 448"/><path class="ln red fat ans-x" d="M600 404 L480 448"/>
-      <defs>
-        <mask id="ans-m1" maskUnits="userSpaceOnUse"><path class="ans-mk" d="M980 362 C960 320 700 330 584 344" stroke="#fff" stroke-width="10" fill="none"/></mask>
-        <mask id="ans-m2" maskUnits="userSpaceOnUse"><path class="ans-mk" d="M496 344 C380 330 120 320 96 356" stroke="#fff" stroke-width="10" fill="none"/></mask>
-      </defs>
-      <path class="ln order" mask="url(#ans-m1)" d="M980 362 C960 320 700 330 584 344" marker-end="url(#arr-blue)"/>
-      <path class="ln order" mask="url(#ans-m2)" d="M496 344 C380 330 120 320 96 356" marker-end="url(#arr-blue)"/>
-      <text x="780" y="318" text-anchor="middle" style="font:600 11px var(--font-label);letter-spacing:.08em;fill:var(--blue)">ORDER DATA</text>
-      <text x="300" y="318" text-anchor="middle" style="font:600 11px var(--font-label);letter-spacing:.08em;fill:var(--blue)">ORDER DATA</text>
-      <text x="540" y="290" text-anchor="middle" class="svg-label" style="fill:var(--blue)">Online store</text>
-      <path class="ans-route" d="M150 446 H926" fill="none"/>
-      <g class="ans-pk"><use href="#parcel" transform="scale(1.2)"/></g>
-      <text x="88" y="474" text-anchor="middle" class="svg-label">Supplier</text>
-      <text x="980" y="474" text-anchor="middle" class="svg-label">Customer</text>
-    </svg>
-  </div>
-</section>
-<style>
-  html.hz-on #answer{--cps-split:no}
-  .ans-wrap{display:grid;gap:clamp(14px,2.6vh,30px);max-width:1220px}
-  .ans-head{display:flex;justify-content:space-between;align-items:end;gap:24px 48px;flex-wrap:wrap}
-  .ans-line{font:700 clamp(19px,1.7vw,24px)/1.25 var(--font-display);font-variation-settings:'wdth' 85;max-width:30ch}
-  .ans-svg{width:100%;height:auto;max-height:calc(100svh - 300px);overflow:visible}
-  .js .ans-boxes use{opacity:0}
-  .ans-boxes use.on{opacity:1;transition:opacity .1s steps(1)}
-</style>
-<script>
-(() => {
-  const s = $('#answer');
-  const a = $$('.ans-a .ln', s), b = $$('.ans-b .ln', s), masks = $$('.ans-mk', s), xs = $$('.ans-x', s);
-  prepDraw([...a, ...b, ...xs]); prepDraw(masks);
-  const boxes = $$('.ans-boxes use', s), pk = $('.ans-pk', s), route = $('.ans-route', s);
-  const p0 = route.getPointAtLength(0); pk.setAttribute('transform', `translate(${p0.x} ${p0.y})`);
-  if (!FINAL) pk.style.opacity = 0; else boxes.forEach(u => u.classList.add('on'));
-  onView(s, () => {
-    let t = penDraw(a, { speed: 1100, overlap: .5 });
-    boxes.forEach((u, i) => setTimeout(() => u.classList.add('on'), FINAL ? 0 : (t * 1000 + i * 140)));   /* stock piles up, box by box */
-    t += .9;
-    t = penDraw(b, { delay: t, speed: 1100, overlap: .5 });
-    t = penDraw(masks, { delay: t, speed: 520 });
-    t = penDraw(xs, { delay: t, speed: 700 });
-    setTimeout(() => { pk.style.opacity = 1; travel(pk, route, { dur: 1.8 }); }, FINAL ? 0 : (t + .3) * 1000);
-  }, .35);
-})();
-</script>
-
-<section id="trend" class="band kraft" data-title="A trillion-dollar trend">
-  <div class="wrap tr-wrap">
-    <div class="tr-head">
-      <h2 class="rv">This is no side hustle. It's heading for $1 trillion.</h2>
-      <dl class="tr-nums">
-        <div class="rv" style="--d:.1s"><dt>~24%</dt><dd>growth every year (forecast)</dd></div>
-        <div class="rv" style="--d:.2s"><dt><mark>4x</mark></dt><dd>bigger by 2030 than in 2023</dd></div>
-        <div class="rv tr-quarter" style="--d:.3s"><dt>~1 in 4</dt><dd>online stores already use it as their main model
-          <svg class="tr-shops" viewBox="0 0 132 30" aria-hidden="true"></svg></dd></div>
-      </dl>
-    </div>
-    <figure class="tr-fig">
-      <svg class="tr-svg" viewBox="0 0 660 470" role="img" aria-label="Global dropshipping market in billions of dollars: 285 in 2023 and 352 in 2024 (estimates), then forecasts of 435 in 2025, 538 in 2026, 665 in 2027, 822 in 2028, 1,017 in 2029 and 1,257 in 2030. Each box stands for 100 billion dollars."></svg>
-      <figcaption class="tr-cap"><span class="label">Each box = $100 billion. Solid: estimate. Dashed: forecast.</span>
-        <span class="tr-src">Source: Precedence Research via Oberlo (market size); Analyzify via Printful (share of stores). Estimates from other firms differ.</span></figcaption>
-    </figure>
-  </div>
-</section>
-<style>
-  html.hz-on #trend{--cps-split:no}
-  .tr-wrap{display:grid;grid-template-columns:minmax(0,4.6fr) minmax(0,6.4fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1240px}
-  .tr-head{display:grid;gap:26px}
-  .tr-nums{margin:0;display:grid;border-top:2px solid var(--ink)}
-  .tr-nums div{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line-2)}
-  .tr-nums dt{font:900 clamp(32px,3vw,44px)/1 var(--font-display);font-variation-settings:'wdth' 66}
-  .tr-nums dd{margin:0;font-size:16px;line-height:1.35}
-  .tr-shops{display:block;width:132px;height:30px;margin-top:6px}
-  .tr-fig{margin:0;display:grid;gap:8px}
-  .tr-svg{width:100%;height:auto;max-height:calc(100svh - 230px);overflow:visible}
-  .tr-cap{display:grid;gap:3px}
-  .tr-cap .label{color:var(--ink)}
-  .tr-src{font:400 10.5px/1.4 var(--font-label);color:var(--muted)}
-  .tr-box{transition:opacity .08s steps(1),translate .28s cubic-bezier(.3,1.4,.5,1)}
-  .js .tr-box.wait{opacity:0;translate:0 -40px}
-  .tr-val{transition:opacity .2s steps(2)}
-  .js .tr-val.wait{opacity:0}
-  html.still .tr-box{translate:none}
-</style>
-<script>
-(() => {
-  const s = $('#trend'), svg = $('.tr-svg', s);
-  const DATA = [[2023, 284.6, 0], [2024, 351.8, 0], [2025, 435, 1], [2026, 537.8, 1], [2027, 665, 1], [2028, 822.1, 1], [2029, 1016.5, 1], [2030, 1256.8, 1]];
-  const BASE = 420, K = 0.3, UNIT = 100, CW = 58, GAP = 22, X0 = 40;   /* K px per $1B, one box per $100B */
-  const fmt = v => v >= 1000 ? '$' + (v / 1000).toFixed(2).replace(/0$/, '') + 'T' : '$' + Math.round(v) + 'B';
-  let out = `<path d="M${X0 - 14} ${BASE} H${X0 + DATA.length * (CW + GAP)}" stroke="#1E1A16" stroke-width="2"/>`;
-  const ty = BASE - 1000 * K;
-  out += `<path d="M${X0 - 14} ${ty} H${X0 + DATA.length * (CW + GAP)}" stroke="var(--red-deep)" stroke-width="1.6" stroke-dasharray="6 5"/>
-    <text x="${X0 - 14}" y="${ty - 8}" class="svg-hand" style="font-size:19px">$1 trillion</text>`;
-  DATA.forEach(([yr, v, fc], i) => {
-    const x = X0 + i * (CW + GAP), h = v * K, n = Math.ceil(v / UNIT);
-    for (let b = 0; b < n; b++) {
-      const bh = Math.min(UNIT, v - b * UNIT) * K, y = BASE - b * UNIT * K - bh;
-      const full = bh >= UNIT * K - .1;
-      out += `<g class="tr-box wait" data-c="${i}" data-b="${b}">
-        <rect x="${x}" y="${y.toFixed(1)}" width="${CW}" height="${bh.toFixed(1)}" fill="${fc ? 'var(--card)' : 'var(--kraft-2)'}" stroke="#1E1A16" stroke-width="1.6" ${fc ? 'stroke-dasharray="4 3"' : ''}/>
-        ${full ? `<path d="M${x + CW / 2} ${y.toFixed(1)} v${(bh * .45).toFixed(1)}" stroke="var(--marker)" stroke-width="7" opacity="${fc ? .7 : .95}"/>` : ''}
-      </g>`;
-    }
-    out += `<text class="tr-val wait" data-c="${i}" x="${x + CW / 2}" y="${(BASE - h - 10).toFixed(1)}" text-anchor="middle" style="font:800 15px var(--font-display);font-variation-settings:'wdth' 75;fill:var(--ink)">${fmt(v)}</text>
-      <text x="${x + CW / 2}" y="${BASE + 22}" text-anchor="middle" class="svg-label" style="${fc ? 'fill:var(--muted)' : ''}">${yr}</text>`;
-  });
-  svg.innerHTML = out;
-
-  /* one in four: four storefronts, one marked */
-  let sh = '';
-  for (let i = 0; i < 4; i++) {
-    const x = i * 34;
-    sh += `<g transform="translate(${x} 2)"><path d="M2 26 V10 M28 26 V10 M0 10 H30 L27 3 H3 Z" fill="${i === 0 ? 'var(--marker)' : 'none'}" stroke="#1E1A16" stroke-width="1.5" stroke-linejoin="round"/><rect x="7" y="13" width="16" height="7" fill="${i === 0 ? '#1E1A16' : 'none'}" stroke="#1E1A16" stroke-width="1.2"/></g>`;
-  }
-  $('.tr-shops', s).innerHTML = sh;
-
-  const boxes = $$('.tr-box', svg), vals = $$('.tr-val', svg);
-  onView(s, () => {
-    if (FINAL) { boxes.forEach(b => b.classList.remove('wait')); vals.forEach(v => v.classList.remove('wait')); return; }
-    /* columns stack up box by box, year by year */
-    let t = 350;
-    DATA.forEach((_, i) => {
-      boxes.filter(b => +b.dataset.c === i).forEach(b => { setTimeout(() => b.classList.remove('wait'), t); t += 55; });
-      setTimeout(() => vals[i].classList.remove('wait'), t + 60);
-      t += 90;
-    });
-  }, .45);
-})();
-</script>
-
-<section id="part2" class="band dark dv" data-title="Part 2: Why do it?">
-  <div class="wrap dv-wrap">
-    <div class="dv-head">
-      <p class="dv-part stencil">Part 2</p>
-      <h2 class="rv">So why are so many people doing it?</h2>
-      <p class="lede rv" style="--d:.15s">First, follow one order from the tap to the doorstep.</p>
-    </div>
-    <div class="dv-card lbl rv" style="--d:.1s">
-      <i class="tape" style="left:38%;top:-14px;rotate:-4deg"></i>
-      <div class="dv-top"><span class="label">Tracking</span><b>ITB-01 / DROPSHIPPING</b></div>
-      <ol class="dv-list">
-        <li class="dv-done"><i></i><span class="dv-name">Part 1<br><b>What it is</b></span><span class="dv-st">Delivered</span></li>
-        <li class="dv-now"><i></i><span class="dv-name">Part 2<br><b>Why do it</b></span><span class="dv-st">Out for delivery</span></li>
-        <li><i></i><span class="dv-name">Part 3<br><b>Why not</b></span><span class="dv-st">Not yet</span></li>
-      </ol>
-      <i class="dv-line" aria-hidden="true"></i>
-    </div>
-  </div>
-</section>
-<style>
-  html.hz-on .dv{--cps-split:no}
-  .dv-wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4.4fr);gap:clamp(32px,5vw,90px);align-items:center;max-width:1180px}
-  .dv-head{display:grid;gap:18px}
-  .dv-part{font-size:clamp(90px,11vw,170px);color:var(--marker);margin:0 0 -8px;line-height:.8}
-  .dv h2{color:var(--paper);font-size:clamp(44px,4.8vw,72px);max-width:14ch}
-  .dv-card{padding:0 0 10px;rotate:1.2deg;position:relative}
-  .dv-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;border-bottom:2px solid var(--ink);font:600 13px var(--font-label);letter-spacing:.06em}
-  .dv-top .label{color:var(--ink)}
-  .dv-list{list-style:none;margin:0;padding:8px 22px 6px 22px;display:grid}
-  .dv-list li{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px dashed var(--line-2);position:relative;z-index:1}
-  .dv-list li:last-child{border-bottom:0}
-  .dv-list li > i{width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);background:var(--card);justify-self:center}
-  .dv-name{font:500 12px/1.25 var(--font-label);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  .dv-name b{font:800 24px/1.1 var(--font-display);font-variation-settings:'wdth' 75;letter-spacing:0;text-transform:none;color:var(--ink)}
-  .dv-st{font:900 15px var(--font-stencil);letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border:2.5px solid currentColor;border-radius:3px;color:var(--muted);opacity:.55}
-  .dv-done > i{background:var(--ink)}
-  .dv-done .dv-st{color:var(--ink);opacity:1}
-  .dv-now > i{background:var(--marker);border-color:var(--ink);box-shadow:0 0 0 5px rgba(245,203,60,.35)}
-  .dv-now .dv-st{color:var(--card);background:var(--ink);border-color:var(--ink);opacity:1}
-  .dv-now.dv-bad .dv-st{background:var(--red);border-color:var(--red)}
-  .dv-now.dv-bad > i{background:var(--red);box-shadow:0 0 0 5px rgba(184,48,26,.25)}
-  .dv-line{position:absolute;left:35px;top:84px;height:calc(100% - 140px);width:2.5px;background:var(--ink);z-index:0;transform-origin:50% 0;transition:scale 1.2s var(--ease-draw) .3s}
-  .js .dv-line{scale:1 0}
-  .dv-line.on{scale:1 1}
-  /* statuses land like stamps */
-  .js .dv .dv-st{scale:1.3;opacity:0}
-  .dv .dv-st.on{scale:1;transition:scale .12s steps(2),opacity .12s steps(2)}
-  .dv .dv-st.on{opacity:1}
-  .dv li:not(.dv-done):not(.dv-now) .dv-st.on{opacity:.55}
-  html.calm.js .dv .dv-st{scale:1;opacity:1}
-</style>
-<script>
-/* shared by both part dividers */
-function initDivider(s) {
-  const line = $('.dv-line', s), sts = $$('.dv-st', s);
-  onView(s, () => {
-    line.classList.add('on');
-    sts.forEach((el, i) => setTimeout(() => el.classList.add('on'), FINAL ? 0 : (500 + i * 420)));
-  }, .4);
-}
-initDivider($('#part2'));
-</script>
-
 <section id="order" class="band sheet" data-span="2" data-stops="0,0.3333,0.6667,1" data-title="One order, four steps">
   <div class="or-in">
     <div class="or-head wrap">
@@ -1119,85 +814,6 @@ initDivider($('#part2'));
 })();
 </script>
 
-<section id="money" class="band kraft" data-title="How it makes money">
-  <div class="wrap mo-wrap">
-    <div class="mo-head">
-      <h2 class="rv">The store lives on the gap</h2>
-      <p class="lede rv" style="--d:.1s">A customer pays $80 for a pair of shoes. The supplier charges the store $50. The $30 in between is the store's to keep.</p>
-      <p class="mo-def rv" style="--d:.2s">That gap is called <mark>the markup.</mark></p>
-    </div>
-    <figure class="mo-fig">
-      <svg class="mo-svg" viewBox="0 0 640 450" role="img" aria-label="An $80 price tag tears into a $50 piece that goes to the supplier and a $30 piece the store keeps.">
-        <path class="ln thin mo-string" d="M110 196 C80 120 120 60 60 20"/>
-        <g class="mo-l">
-          <path d="M120 92 H398 V300 H120 L60 196 Z" class="f-card" stroke="#1E1A16" stroke-width="2.4" stroke-linejoin="round"/>
-          <circle cx="104" cy="196" r="12" fill="var(--kraft)" stroke="#1E1A16" stroke-width="2"/>
-          <g class="mo-after">
-            <text x="258" y="140" text-anchor="middle" class="svg-label" style="fill:var(--muted)">To the supplier</text>
-            <text x="258" y="238" text-anchor="middle" style="font:900 96px var(--font-display);font-variation-settings:'wdth' 64;fill:var(--muted)">$50</text>
-            <text x="258" y="272" text-anchor="middle" class="svg-label" style="fill:var(--muted)">Wholesale price</text>
-          </g>
-        </g>
-        <g class="mo-r">
-          <path class="mo-rbg" d="M398 92 H600 V300 H398 Z" fill="var(--card)" stroke="#1E1A16" stroke-width="2.4" stroke-linejoin="round"/>
-          <g class="mo-after">
-            <text x="499" y="140" text-anchor="middle" class="svg-label">Store keeps</text>
-            <text x="499" y="238" text-anchor="middle" style="font:900 96px var(--font-display);font-variation-settings:'wdth' 64;fill:var(--ink)">$30</text>
-            <text x="499" y="272" text-anchor="middle" class="svg-label">Gross profit</text>
-          </g>
-        </g>
-        <g class="mo-before">
-          <text x="330" y="140" text-anchor="middle" class="svg-label">Customer pays</text>
-          <text x="330" y="246" text-anchor="middle" style="font:900 132px var(--font-display);font-variation-settings:'wdth' 64;fill:var(--ink)">$80</text>
-        </g>
-        <path class="mo-perf" d="M398 84 V308" stroke="var(--red)" stroke-width="2.4" stroke-dasharray="6 6" fill="none"/>
-        <text class="mo-sc svg-hand" x="410" y="74">tear here</text>
-        <g class="mo-eq">
-          <text x="330" y="378" text-anchor="middle" style="font:600 15px var(--font-label);letter-spacing:.04em;fill:var(--ink)">PROFIT = SELLING PRICE − SUPPLIER PRICE</text>
-          <text x="330" y="414" text-anchor="middle" style="font:800 26px var(--font-display);font-variation-settings:'wdth' 80;fill:var(--ink)">$80 − $50 = $30, or 37% of the order</text>
-        </g>
-      </svg>
-    </figure>
-  </div>
-</section>
-<style>
-  html.hz-on #money{--cps-split:no}
-  .mo-wrap{display:grid;grid-template-columns:minmax(0,4.4fr) minmax(0,6fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1220px}
-  .mo-head{display:grid;gap:20px}
-  .mo-def{font:800 clamp(26px,2.4vw,34px)/1.15 var(--font-display);font-variation-settings:'wdth' 80}
-  .mo-fig{margin:0}
-  .mo-svg{width:100%;height:auto;max-height:calc(100svh - 200px);overflow:visible}
-  .mo-l,.mo-r{transform-box:fill-box;transform-origin:50% 50%;transition:transform 1s cubic-bezier(.3,1.25,.5,1)}
-  .mo-l.split{transform:translate(-26px,38px) rotate(-5deg)}
-  .mo-r.split{transform:translate(22px,-16px) rotate(3deg)}
-  .mo-r.split .mo-rbg{fill:var(--marker);transition:fill .1s steps(1) .5s}
-  .mo-after{opacity:0;transition:opacity .1s steps(1) .35s}
-  .split .mo-after{opacity:1}
-  .mo-before{transition:opacity .1s steps(1) .3s}
-  .mo-before.gone{opacity:0}
-  .mo-perf.gone,.mo-sc.gone{opacity:0;transition:opacity .1s steps(1) .3s}
-  .js .mo-eq{opacity:0}
-  .mo-eq.on{opacity:1;transition:opacity .5s var(--ease-out)}
-  html.still .mo-l,html.still .mo-r{transition:none}
-</style>
-<script>
-(() => {
-  const s = $('#money'), L = $('.mo-l', s), R = $('.mo-r', s), before = $('.mo-before', s), perf = $('.mo-perf', s), sc = $('.mo-sc', s), eq = $('.mo-eq', s);
-  prepDraw([perf]);
-  const split = () => { [L, R].forEach(g => g.classList.add('split')); before.classList.add('gone'); perf.classList.add('gone'); sc.classList.add('gone'); };
-  if (FINAL) { perf.style.strokeDasharray = '6 6'; split(); eq.classList.add('on'); return; }
-  sc.style.opacity = 0;
-  onView(s, () => {
-    /* the perforation draws, then the tag tears in two */
-    perf.style.transition = 'stroke-dashoffset .9s var(--ease-draw) .6s';
-    requestAnimationFrame(() => { perf.style.strokeDashoffset = 0; });
-    setTimeout(() => { perf.style.strokeDasharray = '6 6'; perf.style.strokeDashoffset = 0; sc.style.opacity = 1; }, 1500);
-    setTimeout(split, 2500);
-    setTimeout(() => eq.classList.add('on'), 3500);
-  }, .45);
-})();
-</script>
-
 <section id="compare" class="band sheet" data-title="Compared to Amazon">
   <div class="wrap cm-wrap">
     <h2 class="rv">Amazon owns the stock. A dropshipper owns none.</h2>
@@ -1276,84 +892,6 @@ initDivider($('#part2'));
     setTimeout(() => note.classList.add('on'), FINAL ? 0 : 2800);
   }, .45);
   addEventListener('resize', () => { if (note.classList.contains('on')) { drawRing(); ring.style.strokeDashoffset = 0; } });
-})();
-</script>
-
-<section id="receipt" class="band dark" data-title="Three reasons">
-  <div class="wrap rc-wrap">
-    <div class="rc-head">
-      <h2 class="rv">Why pick the slow column? Read the bill.</h2>
-      <p class="lede rv" style="--d:.1s">Here is what it costs to open a dropshipping store, against keeping stock.</p>
-      <ol class="rc-why">
-        <li class="rv" style="--d:.2s"><b>1</b>Easy to start</li>
-        <li class="rv" style="--d:.3s"><b>2</b>Low risk</li>
-        <li class="rv" style="--d:.4s"><b>3</b>Free to grow</li>
-      </ol>
-    </div>
-    <div class="rc-printer">
-      <div class="rc-slot" aria-hidden="true"></div>
-      <div class="rc-feed">
-        <div class="rc-paper">
-          <p class="rc-title">Store setup<br>receipt</p>
-          <p class="rc-meta"><span>ITB-01</span><span>Dropshipping store</span></p>
-          <p class="rc-sec">1. Easy to start</p>
-          <p class="rc-ln"><span>Stock to buy first</span><b>None</b></p>
-          <p class="rc-ln"><span>Shop or warehouse rent</span><b>None</b></p>
-          <p class="rc-ln"><span>Store setup (Shopify, WooCommerce)</span><b>Hours</b></p>
-          <p class="rc-sec">2. Low risk</p>
-          <p class="rc-ln"><span>You pay the supplier</span><b>After the customer pays you</b></p>
-          <p class="rc-ln"><span>Unsold goods piling up</span><b>None</b></p>
-          <p class="rc-ln"><span>Add or remove products</span><b>Any time</b></p>
-          <p class="rc-sec">3. Free to grow</p>
-          <p class="rc-ln"><span>Storing, packing, shipping</span><b>Supplier</b></p>
-          <p class="rc-ln"><span>Marketing and customers</span><b>You</b></p>
-          <p class="rc-ln"><span>Where you work</span><b>Anywhere</b></p>
-          <p class="rc-total"><span>Money needed upfront</span><b><mark>Very little</mark></b></p>
-          <svg class="rc-bar" aria-hidden="true"></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-  html.hz-on #receipt{--cps-split:no}
-  .rc-wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5.2fr);gap:clamp(28px,5vw,90px);align-items:center;max-width:1180px}
-  #receipt h2{color:var(--paper);max-width:14ch}
-  .rc-head{display:grid;gap:22px}
-  .rc-why{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
-  .rc-why li{display:flex;align-items:center;gap:14px;font:800 clamp(24px,2.3vw,32px)/1 var(--font-display);font-variation-settings:'wdth' 78;color:var(--paper)}
-  .rc-why b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--marker);color:var(--ink);font:900 24px var(--font-stencil)}
-  .rc-printer{position:relative;justify-self:center;width:min(430px,100%)}
-  .rc-slot{height:16px;border-radius:8px;background:#0E0C0A;box-shadow:inset 0 3px 6px rgba(0,0,0,.6),0 1px 0 rgba(255,255,255,.08);margin:0 -14px}
-  .rc-feed{overflow:hidden;margin-top:-8px;padding:0 6px 20px}
-  .rc-paper{background:var(--card);color:var(--ink);padding:24px 26px 30px;font:500 13.5px/1.35 var(--font-label);
-    --zz:linear-gradient(-45deg,transparent 7px,#000 7.5px) 0 100%/14px 14px repeat-x,linear-gradient(45deg,transparent 7px,#000 7.5px) 0 100%/14px 14px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 13px) no-repeat;
-    -webkit-mask:var(--zz);mask:var(--zz);box-shadow:0 10px 30px rgba(0,0,0,.5)}
-  .rc-title{font:900 30px/.95 var(--font-stencil);text-transform:uppercase;text-align:center;letter-spacing:.04em}
-  .rc-meta{display:flex;justify-content:space-between;border-block:1.5px dashed var(--ink);padding:6px 0;margin:12px 0 4px;font-size:11.5px;text-transform:uppercase}
-  .rc-sec{font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:12px;padding-bottom:3px;border-bottom:1px solid var(--ink)}
-  .rc-ln{display:flex;gap:10px;justify-content:space-between;align-items:baseline;padding:3px 0}
-  .rc-ln span{flex:1 1 auto;overflow:hidden;white-space:nowrap}
-  .rc-ln span::after{content:" ................................................................";color:var(--muted)}
-  .rc-ln b{flex:0 0 auto;font-weight:600;text-transform:uppercase;max-width:52%;text-align:right}
-  .rc-total{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-top:2px solid var(--ink);margin-top:12px;padding-top:9px;font:900 21px var(--font-stencil);text-transform:uppercase}
-  .rc-total b{font-weight:900}
-  .rc-bar{display:block;width:100%;height:34px;margin-top:14px;color:var(--ink)}
-  /* printing: the paper feeds down out of the slot in jerky steps, like a thermal printer */
-  .js .rc-paper{translate:0 -100%}
-  .rc-paper.print{translate:0 0;transition:translate 2.6s steps(26)}
-  html.calm.js .rc-paper{translate:none}
-</style>
-<script>
-(() => {
-  const s = $('#receipt'), paper = $('.rc-paper', s);
-  barcode($('.rc-bar', s), 'store setup receipt', 360, 34);
-  onView(s, () => {
-    const mk = $('mark', s);
-    if (FINAL) { paper.style.translate = '0 0'; mk.classList.add('in'); return; }
-    setTimeout(() => paper.classList.add('print'), 450);
-    setTimeout(() => mk.classList.add('in'), 3100);
-  }, .45);
 })();
 </script>
 
@@ -1441,10 +979,321 @@ initDivider($('#part2'));
 })();
 </script>
 
-<section id="part3" class="band dark dv" data-title="Part 3: Why not?">
+<section id="hook" class="band dark" data-title="Two giants, one secret">
+  <div class="wrap hook-wrap">
+    <h2 class="rv">Two Indian giants. One shared secret.</h2>
+    <div class="hook-lbl lbl rv" style="--d:.15s">
+      <i class="tape" style="left:46%;top:-14px;rotate:3deg"></i>
+      <div class="hook-side">
+        <p class="label hook-k">Selling side</p>
+        <p class="hook-name">Meesho</p>
+        <p class="hook-who"><b>Vidit Aatrey &amp; Sanjeev Barnwal</b><br>IIT Delhi graduates. Started Meesho in 2015.</p>
+        <dl class="hook-nums">
+          <div><dt>234 million</dt><dd>people bought on Meesho in a year</dd></div>
+          <div><dt>15 million</dt><dd>resellers who never held stock</dd></div>
+          <div><dt>~₹8,600 crore</dt><dd>Vidit's stake after the IPO (~$1 billion)</dd></div>
+        </dl>
+      </div>
+      <div class="hook-side">
+        <p class="label hook-k">Supplier side</p>
+        <p class="hook-name">IndiaMART</p>
+        <p class="hook-who"><b>Dinesh Agarwal &amp; Brijesh Agrawal</b><br>Dinesh quit his job at HCL. Started IndiaMART in 1996 from a house in Delhi.</p>
+        <dl class="hook-nums">
+          <div><dt>8.8 million</dt><dd>supplier storefronts</dd></div>
+          <div><dt>~60%</dt><dd>share of India's online B2B market</dd></div>
+          <div><dt>36 times</dt><dd>oversubscribed at its 2019 IPO</dd></div>
+        </dl>
+      </div>
+      <div class="hook-foot">
+        <svg class="hook-bar" aria-hidden="true"></svg>
+        <p class="hook-stamp stencil" aria-label="What is their secret?">What is<br>their secret?</p>
+      </div>
+    </div>
+    <p class="hook-src">Sources: Meesho IPO filing; Storyboard18 (Dec 2025); IndiaMART Q1 FY27 results; dineshagarwal.com</p>
+  </div>
+</section>
+<style>
+  .hook-wrap{display:grid;gap:clamp(20px,3.4vh,36px);max-width:1180px}
+  #hook h2{max-width:20ch;color:var(--paper)}
+  .hook-lbl{display:grid;grid-template-columns:1fr 1fr;rotate:.6deg}
+  .hook-side{padding:clamp(18px,2.4vw,30px);display:grid;gap:10px;align-content:start}
+  .hook-side + .hook-side{border-left:2px solid var(--ink)}
+  #hook .hook-k{color:var(--ink);border:1.5px solid var(--ink);justify-self:start;padding:4px 7px;border-radius:2px}
+  .hook-name{font:900 clamp(44px,5vw,72px)/.9 var(--font-display);font-variation-settings:'wdth' 66;letter-spacing:-.02em}
+  .hook-who{font-size:15px;line-height:1.45;color:var(--muted);max-width:40ch}
+  .hook-who b{color:var(--ink);font-weight:700}
+  .hook-nums{margin:6px 0 0;display:grid;border-top:1.5px solid var(--ink)}
+  .hook-nums div{display:grid;grid-template-columns:minmax(150px,auto) 1fr;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px dashed var(--line-2)}
+  .hook-nums dt{font:800 clamp(22px,2vw,28px)/1.05 var(--font-display);font-variation-settings:'wdth' 75;font-variant-numeric:tabular-nums}
+  .hook-nums dd{margin:0;font-size:14.5px;line-height:1.35}
+  .hook-foot{grid-column:1/-1;display:flex;gap:22px;align-items:center;border-top:2px solid var(--ink);padding:12px clamp(18px,2.4vw,30px)}
+  .hook-src{font:400 11px/1.4 var(--font-label);color:rgba(244,239,228,.5);margin-top:-14px}
+  .hook-foot{position:relative;min-height:64px}
+  .hook-bar{width:200px;height:34px;flex:0 0 auto;color:var(--ink)}
+  /* the rubber stamp: lands whole, like ink, no glide */
+  .hook-stamp{position:absolute;right:clamp(14px,3vw,40px);bottom:10px;margin:0;color:var(--red);
+    font-size:clamp(24px,2.5vw,36px);text-transform:uppercase;text-align:center;padding:10px 16px;
+    border:4px double var(--red);border-radius:6px;rotate:-7deg;filter:url(#ink);mix-blend-mode:multiply;background:rgba(251,249,244,.0)}
+  .js .hook-stamp{opacity:0;scale:1.18}
+  .hook-stamp.on{opacity:.92;scale:1;transition:opacity .12s steps(2),scale .12s steps(2)}
+  html.hz-on #hook{--cps-split:no}
+  html.calm.js .hook-stamp{opacity:.92;scale:1}
+</style>
+<script>
+(() => {
+  const s = $('#hook');
+  barcode($('.hook-bar', s), 'meesho indiamart', 200, 34);
+  const st = $('.hook-stamp', s);
+  onView($('.hook-lbl', s), () => setTimeout(() => st.classList.add('on'), FINAL ? 0 : 1500), .5);
+})();
+</script>
+
+<section id="trend" class="band kraft" data-title="A trillion-dollar trend">
+  <div class="wrap tr-wrap">
+    <div class="tr-head">
+      <h2 class="rv">This is no side hustle. It's heading for $1 trillion.</h2>
+      <dl class="tr-nums">
+        <div class="rv" style="--d:.1s"><dt>~24%</dt><dd>growth every year (forecast)</dd></div>
+        <div class="rv" style="--d:.2s"><dt><mark>4x</mark></dt><dd>bigger by 2030 than in 2023</dd></div>
+        <div class="rv tr-quarter" style="--d:.3s"><dt>~1 in 4</dt><dd>online stores already use it as their main model
+          <svg class="tr-shops" viewBox="0 0 132 30" aria-hidden="true"></svg></dd></div>
+      </dl>
+    </div>
+    <figure class="tr-fig">
+      <svg class="tr-svg" viewBox="0 0 660 470" role="img" aria-label="Global dropshipping market in billions of dollars: 285 in 2023 and 352 in 2024 (estimates), then forecasts of 435 in 2025, 538 in 2026, 665 in 2027, 822 in 2028, 1,017 in 2029 and 1,257 in 2030. Each box stands for 100 billion dollars."></svg>
+      <figcaption class="tr-cap"><span class="label">Each box = $100 billion. Solid: estimate. Dashed: forecast.</span>
+        <span class="tr-src">Source: Precedence Research via Oberlo (market size); Analyzify via Printful (share of stores). Estimates from other firms differ.</span></figcaption>
+    </figure>
+  </div>
+</section>
+<style>
+  html.hz-on #trend{--cps-split:no}
+  .tr-wrap{display:grid;grid-template-columns:minmax(0,4.6fr) minmax(0,6.4fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1240px}
+  .tr-head{display:grid;gap:26px}
+  .tr-nums{margin:0;display:grid;border-top:2px solid var(--ink)}
+  .tr-nums div{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line-2)}
+  .tr-nums dt{font:900 clamp(32px,3vw,44px)/1 var(--font-display);font-variation-settings:'wdth' 66}
+  .tr-nums dd{margin:0;font-size:16px;line-height:1.35}
+  .tr-shops{display:block;width:132px;height:30px;margin-top:6px}
+  .tr-fig{margin:0;display:grid;gap:8px}
+  .tr-svg{width:100%;height:auto;max-height:calc(100svh - 230px);overflow:visible}
+  .tr-cap{display:grid;gap:3px}
+  .tr-cap .label{color:var(--ink)}
+  .tr-src{font:400 10.5px/1.4 var(--font-label);color:var(--muted)}
+  .tr-box{transition:opacity .08s steps(1),translate .28s cubic-bezier(.3,1.4,.5,1)}
+  .js .tr-box.wait{opacity:0;translate:0 -40px}
+  .tr-val{transition:opacity .2s steps(2)}
+  .js .tr-val.wait{opacity:0}
+  html.still .tr-box{translate:none}
+</style>
+<script>
+(() => {
+  const s = $('#trend'), svg = $('.tr-svg', s);
+  const DATA = [[2023, 284.6, 0], [2024, 351.8, 0], [2025, 435, 1], [2026, 537.8, 1], [2027, 665, 1], [2028, 822.1, 1], [2029, 1016.5, 1], [2030, 1256.8, 1]];
+  const BASE = 420, K = 0.3, UNIT = 100, CW = 58, GAP = 22, X0 = 40;   /* K px per $1B, one box per $100B */
+  const fmt = v => v >= 1000 ? '$' + (v / 1000).toFixed(2).replace(/0$/, '') + 'T' : '$' + Math.round(v) + 'B';
+  let out = `<path d="M${X0 - 14} ${BASE} H${X0 + DATA.length * (CW + GAP)}" stroke="#1E1A16" stroke-width="2"/>`;
+  const ty = BASE - 1000 * K;
+  out += `<path d="M${X0 - 14} ${ty} H${X0 + DATA.length * (CW + GAP)}" stroke="var(--red-deep)" stroke-width="1.6" stroke-dasharray="6 5"/>
+    <text x="${X0 - 14}" y="${ty - 8}" class="svg-hand" style="font-size:19px">$1 trillion</text>`;
+  DATA.forEach(([yr, v, fc], i) => {
+    const x = X0 + i * (CW + GAP), h = v * K, n = Math.ceil(v / UNIT);
+    for (let b = 0; b < n; b++) {
+      const bh = Math.min(UNIT, v - b * UNIT) * K, y = BASE - b * UNIT * K - bh;
+      const full = bh >= UNIT * K - .1;
+      out += `<g class="tr-box wait" data-c="${i}" data-b="${b}">
+        <rect x="${x}" y="${y.toFixed(1)}" width="${CW}" height="${bh.toFixed(1)}" fill="${fc ? 'var(--card)' : 'var(--kraft-2)'}" stroke="#1E1A16" stroke-width="1.6" ${fc ? 'stroke-dasharray="4 3"' : ''}/>
+        ${full ? `<path d="M${x + CW / 2} ${y.toFixed(1)} v${(bh * .45).toFixed(1)}" stroke="var(--marker)" stroke-width="7" opacity="${fc ? .7 : .95}"/>` : ''}
+      </g>`;
+    }
+    out += `<text class="tr-val wait" data-c="${i}" x="${x + CW / 2}" y="${(BASE - h - 10).toFixed(1)}" text-anchor="middle" style="font:800 15px var(--font-display);font-variation-settings:'wdth' 75;fill:var(--ink)">${fmt(v)}</text>
+      <text x="${x + CW / 2}" y="${BASE + 22}" text-anchor="middle" class="svg-label" style="${fc ? 'fill:var(--muted)' : ''}">${yr}</text>`;
+  });
+  svg.innerHTML = out;
+
+  /* one in four: four storefronts, one marked */
+  let sh = '';
+  for (let i = 0; i < 4; i++) {
+    const x = i * 34;
+    sh += `<g transform="translate(${x} 2)"><path d="M2 26 V10 M28 26 V10 M0 10 H30 L27 3 H3 Z" fill="${i === 0 ? 'var(--marker)' : 'none'}" stroke="#1E1A16" stroke-width="1.5" stroke-linejoin="round"/><rect x="7" y="13" width="16" height="7" fill="${i === 0 ? '#1E1A16' : 'none'}" stroke="#1E1A16" stroke-width="1.2"/></g>`;
+  }
+  $('.tr-shops', s).innerHTML = sh;
+
+  const boxes = $$('.tr-box', svg), vals = $$('.tr-val', svg);
+  onView(s, () => {
+    if (FINAL) { boxes.forEach(b => b.classList.remove('wait')); vals.forEach(v => v.classList.remove('wait')); return; }
+    /* columns stack up box by box, year by year */
+    let t = 350;
+    DATA.forEach((_, i) => {
+      boxes.filter(b => +b.dataset.c === i).forEach(b => { setTimeout(() => b.classList.remove('wait'), t); t += 55; });
+      setTimeout(() => vals[i].classList.remove('wait'), t + 60);
+      t += 90;
+    });
+  }, .45);
+})();
+</script>
+
+<section id="money" class="band kraft" data-title="How it makes money">
+  <div class="wrap mo-wrap">
+    <div class="mo-head">
+      <h2 class="rv">The store lives on the gap</h2>
+      <p class="lede rv" style="--d:.1s">A customer pays $80 for a pair of shoes. The supplier charges the store $50. The $30 in between is the store's to keep.</p>
+      <p class="mo-def rv" style="--d:.2s">That gap is called <mark>the markup.</mark></p>
+    </div>
+    <figure class="mo-fig">
+      <svg class="mo-svg" viewBox="0 0 640 450" role="img" aria-label="An $80 price tag tears into a $50 piece that goes to the supplier and a $30 piece the store keeps.">
+        <path class="ln thin mo-string" d="M110 196 C80 120 120 60 60 20"/>
+        <g class="mo-l">
+          <path d="M120 92 H398 V300 H120 L60 196 Z" class="f-card" stroke="#1E1A16" stroke-width="2.4" stroke-linejoin="round"/>
+          <circle cx="104" cy="196" r="12" fill="var(--kraft)" stroke="#1E1A16" stroke-width="2"/>
+          <g class="mo-after">
+            <text x="258" y="140" text-anchor="middle" class="svg-label" style="fill:var(--muted)">To the supplier</text>
+            <text x="258" y="238" text-anchor="middle" style="font:900 96px var(--font-display);font-variation-settings:'wdth' 64;fill:var(--muted)">$50</text>
+            <text x="258" y="272" text-anchor="middle" class="svg-label" style="fill:var(--muted)">Wholesale price</text>
+          </g>
+        </g>
+        <g class="mo-r">
+          <path class="mo-rbg" d="M398 92 H600 V300 H398 Z" fill="var(--card)" stroke="#1E1A16" stroke-width="2.4" stroke-linejoin="round"/>
+          <g class="mo-after">
+            <text x="499" y="140" text-anchor="middle" class="svg-label">Store keeps</text>
+            <text x="499" y="238" text-anchor="middle" style="font:900 96px var(--font-display);font-variation-settings:'wdth' 64;fill:var(--ink)">$30</text>
+            <text x="499" y="272" text-anchor="middle" class="svg-label">Gross profit</text>
+          </g>
+        </g>
+        <g class="mo-before">
+          <text x="330" y="140" text-anchor="middle" class="svg-label">Customer pays</text>
+          <text x="330" y="246" text-anchor="middle" style="font:900 132px var(--font-display);font-variation-settings:'wdth' 64;fill:var(--ink)">$80</text>
+        </g>
+        <path class="mo-perf" d="M398 84 V308" stroke="var(--red)" stroke-width="2.4" stroke-dasharray="6 6" fill="none"/>
+        <text class="mo-sc svg-hand" x="410" y="74">tear here</text>
+        <g class="mo-eq">
+          <text x="330" y="378" text-anchor="middle" style="font:600 15px var(--font-label);letter-spacing:.04em;fill:var(--ink)">PROFIT = SELLING PRICE − SUPPLIER PRICE</text>
+          <text x="330" y="414" text-anchor="middle" style="font:800 26px var(--font-display);font-variation-settings:'wdth' 80;fill:var(--ink)">$80 − $50 = $30, or 37% of the order</text>
+        </g>
+      </svg>
+    </figure>
+  </div>
+</section>
+<style>
+  html.hz-on #money{--cps-split:no}
+  .mo-wrap{display:grid;grid-template-columns:minmax(0,4.4fr) minmax(0,6fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1220px}
+  .mo-head{display:grid;gap:20px}
+  .mo-def{font:800 clamp(26px,2.4vw,34px)/1.15 var(--font-display);font-variation-settings:'wdth' 80}
+  .mo-fig{margin:0}
+  .mo-svg{width:100%;height:auto;max-height:calc(100svh - 200px);overflow:visible}
+  .mo-l,.mo-r{transform-box:fill-box;transform-origin:50% 50%;transition:transform 1s cubic-bezier(.3,1.25,.5,1)}
+  .mo-l.split{transform:translate(-26px,38px) rotate(-5deg)}
+  .mo-r.split{transform:translate(22px,-16px) rotate(3deg)}
+  .mo-r.split .mo-rbg{fill:var(--marker);transition:fill .1s steps(1) .5s}
+  .mo-after{opacity:0;transition:opacity .1s steps(1) .35s}
+  .split .mo-after{opacity:1}
+  .mo-before{transition:opacity .1s steps(1) .3s}
+  .mo-before.gone{opacity:0}
+  .mo-perf.gone,.mo-sc.gone{opacity:0;transition:opacity .1s steps(1) .3s}
+  .js .mo-eq{opacity:0}
+  .mo-eq.on{opacity:1;transition:opacity .5s var(--ease-out)}
+  html.still .mo-l,html.still .mo-r{transition:none}
+</style>
+<script>
+(() => {
+  const s = $('#money'), L = $('.mo-l', s), R = $('.mo-r', s), before = $('.mo-before', s), perf = $('.mo-perf', s), sc = $('.mo-sc', s), eq = $('.mo-eq', s);
+  prepDraw([perf]);
+  const split = () => { [L, R].forEach(g => g.classList.add('split')); before.classList.add('gone'); perf.classList.add('gone'); sc.classList.add('gone'); };
+  if (FINAL) { perf.style.strokeDasharray = '6 6'; split(); eq.classList.add('on'); return; }
+  sc.style.opacity = 0;
+  onView(s, () => {
+    /* the perforation draws, then the tag tears in two */
+    perf.style.transition = 'stroke-dashoffset .9s var(--ease-draw) .6s';
+    requestAnimationFrame(() => { perf.style.strokeDashoffset = 0; });
+    setTimeout(() => { perf.style.strokeDasharray = '6 6'; perf.style.strokeDashoffset = 0; sc.style.opacity = 1; }, 1500);
+    setTimeout(split, 2500);
+    setTimeout(() => eq.classList.add('on'), 3500);
+  }, .45);
+})();
+</script>
+
+<section id="receipt" class="band dark" data-title="Three reasons">
+  <div class="wrap rc-wrap">
+    <div class="rc-head">
+      <h2 class="rv">Why pick the slow column? Read the bill.</h2>
+      <p class="lede rv" style="--d:.1s">Here is what it costs to open a dropshipping store, against keeping stock.</p>
+      <ol class="rc-why">
+        <li class="rv" style="--d:.2s"><b>1</b>Easy to start</li>
+        <li class="rv" style="--d:.3s"><b>2</b>Low risk</li>
+        <li class="rv" style="--d:.4s"><b>3</b>Free to grow</li>
+      </ol>
+    </div>
+    <div class="rc-printer">
+      <div class="rc-slot" aria-hidden="true"></div>
+      <div class="rc-feed">
+        <div class="rc-paper">
+          <p class="rc-title">Store setup<br>receipt</p>
+          <p class="rc-meta"><span>ITB-01</span><span>Dropshipping store</span></p>
+          <p class="rc-sec">1. Easy to start</p>
+          <p class="rc-ln"><span>Stock to buy first</span><b>None</b></p>
+          <p class="rc-ln"><span>Shop or warehouse rent</span><b>None</b></p>
+          <p class="rc-ln"><span>Store setup (Shopify, WooCommerce)</span><b>Hours</b></p>
+          <p class="rc-sec">2. Low risk</p>
+          <p class="rc-ln"><span>You pay the supplier</span><b>After the customer pays you</b></p>
+          <p class="rc-ln"><span>Unsold goods piling up</span><b>None</b></p>
+          <p class="rc-ln"><span>Add or remove products</span><b>Any time</b></p>
+          <p class="rc-sec">3. Free to grow</p>
+          <p class="rc-ln"><span>Storing, packing, shipping</span><b>Supplier</b></p>
+          <p class="rc-ln"><span>Marketing and customers</span><b>You</b></p>
+          <p class="rc-ln"><span>Where you work</span><b>Anywhere</b></p>
+          <p class="rc-total"><span>Money needed upfront</span><b><mark>Very little</mark></b></p>
+          <svg class="rc-bar" aria-hidden="true"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  html.hz-on #receipt{--cps-split:no}
+  .rc-wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5.2fr);gap:clamp(28px,5vw,90px);align-items:center;max-width:1180px}
+  #receipt h2{color:var(--paper);max-width:14ch}
+  .rc-head{display:grid;gap:22px}
+  .rc-why{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+  .rc-why li{display:flex;align-items:center;gap:14px;font:800 clamp(24px,2.3vw,32px)/1 var(--font-display);font-variation-settings:'wdth' 78;color:var(--paper)}
+  .rc-why b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--marker);color:var(--ink);font:900 24px var(--font-stencil)}
+  .rc-printer{position:relative;justify-self:center;width:min(430px,100%)}
+  .rc-slot{height:16px;border-radius:8px;background:#0E0C0A;box-shadow:inset 0 3px 6px rgba(0,0,0,.6),0 1px 0 rgba(255,255,255,.08);margin:0 -14px}
+  .rc-feed{overflow:hidden;margin-top:-8px;padding:0 6px 20px}
+  .rc-paper{background:var(--card);color:var(--ink);padding:24px 26px 30px;font:500 13.5px/1.35 var(--font-label);
+    --zz:linear-gradient(-45deg,transparent 7px,#000 7.5px) 0 100%/14px 14px repeat-x,linear-gradient(45deg,transparent 7px,#000 7.5px) 0 100%/14px 14px repeat-x,linear-gradient(#000,#000) 0 0/100% calc(100% - 13px) no-repeat;
+    -webkit-mask:var(--zz);mask:var(--zz);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  .rc-title{font:900 30px/.95 var(--font-stencil);text-transform:uppercase;text-align:center;letter-spacing:.04em}
+  .rc-meta{display:flex;justify-content:space-between;border-block:1.5px dashed var(--ink);padding:6px 0;margin:12px 0 4px;font-size:11.5px;text-transform:uppercase}
+  .rc-sec{font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:12px;padding-bottom:3px;border-bottom:1px solid var(--ink)}
+  .rc-ln{display:flex;gap:10px;justify-content:space-between;align-items:baseline;padding:3px 0}
+  .rc-ln span{flex:1 1 auto;overflow:hidden;white-space:nowrap}
+  .rc-ln span::after{content:" ................................................................";color:var(--muted)}
+  .rc-ln b{flex:0 0 auto;font-weight:600;text-transform:uppercase;max-width:52%;text-align:right}
+  .rc-total{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-top:2px solid var(--ink);margin-top:12px;padding-top:9px;font:900 21px var(--font-stencil);text-transform:uppercase}
+  .rc-total b{font-weight:900}
+  .rc-bar{display:block;width:100%;height:34px;margin-top:14px;color:var(--ink)}
+  /* printing: the paper feeds down out of the slot in jerky steps, like a thermal printer */
+  .js .rc-paper{translate:0 -100%}
+  .rc-paper.print{translate:0 0;transition:translate 2.6s steps(26)}
+  html.calm.js .rc-paper{translate:none}
+</style>
+<script>
+(() => {
+  const s = $('#receipt'), paper = $('.rc-paper', s);
+  barcode($('.rc-bar', s), 'store setup receipt', 360, 34);
+  onView(s, () => {
+    const mk = $('mark', s);
+    if (FINAL) { paper.style.translate = '0 0'; mk.classList.add('in'); return; }
+    setTimeout(() => paper.classList.add('print'), 450);
+    setTimeout(() => mk.classList.add('in'), 3100);
+  }, .45);
+})();
+</script>
+
+<section id="part3" class="band dark dv" data-title="Phase 2: Why not?">
   <div class="wrap dv-wrap">
     <div class="dv-head">
-      <p class="dv-part stencil" style="color:var(--red)">Part 3</p>
+      <p class="dv-part stencil" style="color:var(--red)">Phase 2</p>
       <h2 class="rv">If it's this easy, why isn't everyone rich?</h2>
       <p class="lede rv" style="--d:.15s">Every advantage you just saw has a price.</p>
     </div>
@@ -1452,21 +1301,62 @@ initDivider($('#part2'));
       <i class="tape" style="left:44%;top:-14px;rotate:5deg"></i>
       <div class="dv-top"><span class="label">Tracking</span><b>ITB-01 / DROPSHIPPING</b></div>
       <ol class="dv-list">
-        <li class="dv-done"><i></i><span class="dv-name">Part 1<br><b>What it is</b></span><span class="dv-st">Delivered</span></li>
-        <li class="dv-done"><i></i><span class="dv-name">Part 2<br><b>Why do it</b></span><span class="dv-st">Delivered</span></li>
-        <li class="dv-now dv-bad"><i></i><span class="dv-name">Part 3<br><b>Why not</b></span><span class="dv-st">Delayed</span></li>
+        <li class="dv-done"><i></i><span class="dv-name">Phase 1<br><b>What it is, how and why it works</b></span><span class="dv-st">Delivered</span></li>
+        <li class="dv-now dv-bad"><i></i><span class="dv-name">Phase 2<br><b>Why not</b></span><span class="dv-st">Delayed</span></li>
       </ol>
       <i class="dv-line" aria-hidden="true"></i>
     </div>
   </div>
 </section>
-<script>initDivider($('#part3'));</script>
+<style>
+  html.hz-on .dv{--cps-split:no}
+  .dv-wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4.4fr);gap:clamp(32px,5vw,90px);align-items:center;max-width:1180px}
+  .dv-head{display:grid;gap:18px}
+  .dv-part{font-size:clamp(90px,11vw,170px);color:var(--marker);margin:0 0 -8px;line-height:.8}
+  .dv h2{color:var(--paper);font-size:clamp(44px,4.8vw,72px);max-width:14ch}
+  .dv-card{padding:0 0 10px;rotate:1.2deg;position:relative}
+  .dv-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;border-bottom:2px solid var(--ink);font:600 13px var(--font-label);letter-spacing:.06em}
+  .dv-top .label{color:var(--ink)}
+  .dv-list{list-style:none;margin:0;padding:8px 22px 6px 22px;display:grid}
+  .dv-list li{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px dashed var(--line-2);position:relative;z-index:1}
+  .dv-list li:last-child{border-bottom:0}
+  .dv-list li > i{width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);background:var(--card);justify-self:center}
+  .dv-name{font:500 12px/1.25 var(--font-label);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .dv-name b{font:800 24px/1.1 var(--font-display);font-variation-settings:'wdth' 75;letter-spacing:0;text-transform:none;color:var(--ink)}
+  .dv-st{font:900 15px var(--font-stencil);letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border:2.5px solid currentColor;border-radius:3px;color:var(--muted);opacity:.55}
+  .dv-done > i{background:var(--ink)}
+  .dv-done .dv-st{color:var(--ink);opacity:1}
+  .dv-now > i{background:var(--marker);border-color:var(--ink);box-shadow:0 0 0 5px rgba(245,203,60,.35)}
+  .dv-now .dv-st{color:var(--card);background:var(--ink);border-color:var(--ink);opacity:1}
+  .dv-now.dv-bad .dv-st{background:var(--red);border-color:var(--red)}
+  .dv-now.dv-bad > i{background:var(--red);box-shadow:0 0 0 5px rgba(184,48,26,.25)}
+  .dv-line{position:absolute;left:35px;top:84px;height:calc(100% - 140px);width:2.5px;background:var(--ink);z-index:0;transform-origin:50% 0;transition:scale 1.2s var(--ease-draw) .3s}
+  .js .dv-line{scale:1 0}
+  .dv-line.on{scale:1 1}
+  /* statuses land like stamps */
+  .js .dv .dv-st{scale:1.3;opacity:0}
+  .dv .dv-st.on{scale:1;transition:scale .12s steps(2),opacity .12s steps(2)}
+  .dv .dv-st.on{opacity:1}
+  .dv li:not(.dv-done):not(.dv-now) .dv-st.on{opacity:.55}
+  html.calm.js .dv .dv-st{scale:1;opacity:1}
+</style>
+<script>
+/* the phase divider */
+function initDivider(s) {
+  const line = $('.dv-line', s), sts = $$('.dv-st', s);
+  onView(s, () => {
+    line.classList.add('on');
+    sts.forEach((el, i) => setTimeout(() => el.classList.add('on'), FINAL ? 0 : (500 + i * 420)));
+  }, .4);
+}
+initDivider($('#part3'));
+</script>
 
 <section id="road" class="band kraft" data-span="3" data-stops="0,1,1.5,2" data-title="Easy for you means easy for everyone">
   <div class="rd-in">
     <div class="rd-s1 wrap">
       <div class="rd-head">
-        <p class="label">Part 3: the drawbacks</p>
+        <p class="label">Phase 2: the drawbacks</p>
         <h2 class="rv">Easy for you means easy for everyone</h2>
         <p class="lede rv" style="--d:.1s">Every reason to start comes with its own catch.</p>
       </div>
