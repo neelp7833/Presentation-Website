@@ -1267,6 +1267,90 @@ function initDivider(s) {
 initDivider($('#part3'));
 </script>
 
+<section id="street" class="band dark" data-title="Most stores don't make it">
+  <div class="wrap st-wrap">
+    <div class="st-head">
+      <h2 class="rv">Out of 100 new stores, about 10 make it</h2>
+      <dl class="st-nums">
+        <div class="rv" style="--d:.1s"><dt><mark>~10%</mark></dt><dd>of sellers succeed in their first year</dd></div>
+        <div class="rv" style="--d:.2s"><dt>1.5%</dt><dd>of stores ever reach $50K in monthly sales</dd></div>
+        <div class="rv" style="--d:.3s"><dt>15 to 20%</dt><dd>typical profit margin. Our $30 on $80 example was <s>37%</s>.</dd></div>
+      </dl>
+      <p class="st-src">Industry estimates (StatsUp, DoDropshipping via Printful and Market.us). Treat as rough figures.</p>
+    </div>
+    <figure class="st-fig">
+      <svg class="st-svg" viewBox="0 0 640 430" role="img" aria-label="A street of 100 new stores. 90 go dark. 10 stay lit."></svg>
+      <figcaption class="label">Each shop = 1 new store, 100 in all</figcaption>
+    </figure>
+  </div>
+</section>
+<style>
+  html.hz-on #street{--cps-split:no}
+  .st-wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6.4fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1240px}
+  #street h2{color:var(--paper)}
+  .st-head{display:grid;gap:22px}
+  .st-nums{margin:0;display:grid;border-top:1.5px solid rgba(244,239,228,.4)}
+  .st-nums div{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(244,239,228,.18)}
+  .st-nums dt{font:900 clamp(30px,2.8vw,40px)/1 var(--font-display);font-variation-settings:'wdth' 68;color:var(--paper)}
+  .st-nums dd{margin:0;font-size:16px;line-height:1.4;color:rgba(244,239,228,.82)}
+  .st-nums s{text-decoration-color:var(--marker);text-decoration-thickness:2px}
+  .st-src{font:400 11px/1.45 var(--font-label);color:rgba(244,239,228,.55)}
+  .st-fig{margin:0;display:grid;gap:10px}
+  .st-svg{width:100%;height:auto;max-height:calc(100svh - 230px)}
+  .st-fig .label{color:rgba(244,239,228,.6)}
+  .st-shop .win{fill:var(--marker)}
+  .st-shop.off .win{fill:#3A332C}
+  .st-shop .glow{fill:var(--marker);opacity:.16}
+  .st-shop.off .glow{opacity:0}
+  .st-shop .frame{fill:none;stroke:rgba(244,239,228,.8);stroke-width:1.2;stroke-linejoin:round}
+  .st-shop.off .frame{stroke:rgba(244,239,228,.3)}
+</style>
+<script>
+(() => {
+  const s = $('#street'), svg = $('.st-svg', s);
+  const COLS = 20, ROWS = 5, W = 30, GX = 32, GY = 84, X0 = 0, Y0 = 18;
+  let out = '';
+  for (let r = 0; r < ROWS; r++) {
+    const y = Y0 + r * GY;
+    out += `<path d="M0 ${y + 52} H640" stroke="rgba(244,239,228,.22)" stroke-width="1"/>`;
+    for (let c = 0; c < COLS; c++) {
+      const x = X0 + c * GX + 1;
+      out += `<g class="st-shop" data-i="${r * COLS + c}" transform="translate(${x} ${y})">
+        <rect class="glow" x="-3" y="20" width="${W + 6}" height="34" rx="4"/>
+        <path class="frame" d="M1 52 V18 M${W - 1} 52 V18 M-1 18 H${W + 1} L${W - 2} 8 H2 Z"/>
+        <path class="frame" d="M2 12 L6 18 M8 8 L12 18 M14 8 L16 18 M20 8 L20 18 M26 8 L24 18" style="stroke-width:.8"/>
+        <rect class="win" x="5" y="24" width="${W - 10}" height="14" rx="1"/>
+        <rect class="win" x="11" y="41" width="8" height="11"/>
+      </g>`;
+    }
+  }
+  /* the pen ring for the one store that reaches $50K a month */
+  out += `<g class="st-ring"><ellipse cx="0" cy="0" rx="30" ry="40" fill="none" stroke="var(--marker)" stroke-width="2.6" transform="rotate(-8)"/>
+    <text x="34" y="-36" class="svg-hand" style="fill:var(--marker);font-size:17px">1.5% reach $50K a month</text></g>`;
+  svg.innerHTML = out;
+  const shops = $$('.st-shop', svg);
+
+  /* 10 survivors, fixed so every showing looks the same */
+  const keep = [3, 17, 26, 38, 44, 59, 63, 71, 86, 92];
+  let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const order = shops.map((_, i) => i).filter(i => !keep.includes(i)).sort(() => rnd() - .5);
+  const ring = $('.st-ring', svg), star = shops[44];
+  const m = star.getAttribute('transform').match(/translate\(([\d.]+) ([\d.]+)\)/);
+  ring.setAttribute('transform', `translate(${+m[1] + 15} ${+m[2] + 32})`);
+  const el = $('ellipse', ring); prepDraw([el]);
+  const lbl = $('text', ring); if (!FINAL) lbl.style.opacity = 0;
+
+  onView(s, () => {
+    if (FINAL) { order.forEach(i => shops[i].classList.add('off')); return; }
+    /* the lights go out one by one: each one snaps off, no fade */
+    order.forEach((i, k) => setTimeout(() => shops[i].classList.add('off'), 900 + k * 28));
+    const t = (900 + order.length * 28) / 1000 + .5;
+    penDraw([el], { delay: t, speed: 300 });
+    setTimeout(() => { lbl.style.opacity = 1; }, (t + .8) * 1000);
+  }, .4);
+})();
+</script>
+
 <section id="complaints" class="band sheet" data-title="Who takes the complaints">
   <div class="wrap cp-wrap">
     <div class="cp-head">
