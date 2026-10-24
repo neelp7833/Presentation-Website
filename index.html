@@ -97,6 +97,14 @@ img{max-width:100%}
   html.still *,html.still *::before{transition:none !important}
   :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
+  /* Phone gate */
+  .gate{display:none}
+  @media (max-width:539px), (pointer:coarse) and (max-height:499px){ html:not(.no-gate) main{display:none} html:not(.no-gate) .gate{display:grid} }
+  html.phone main{display:none} html.phone .gate{display:grid}
+  .gate{min-height:100svh;place-items:center;text-align:center;padding:32px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px));background:var(--ground);color:var(--paper)}
+  .gate p{font:800 34px/1.05 var(--font-display);font-variation-settings:'wdth' 72;max-width:12ch;margin:18px auto 10px}
+  .gate small{font:400 15px/1.5 var(--font-body);color:rgba(244,239,228,.7)}
+
   html.calm.js .rv{opacity:1;transform:none;transition:none} html.calm mark{transition:none;background-size:100% 46%}
 </style>
 <script>
@@ -104,6 +112,7 @@ img{max-width:100%}
   /* a presentation always opens on its title slide */
   try { history.scrollRestoration = 'manual'; } catch (e) {}
   addEventListener('load', () => { if (!location.hash) scrollTo(0, 0); });
+  try { if (navigator.maxTouchPoints > 0 && Math.min(screen.width, screen.height) < 540) document.documentElement.classList.add('phone'); } catch (e) {}
   /* A presentation plays the same on every laptop. Windows' "Show animations" switch (and RDP or
      best-performance modes) reports reduced motion to the browser, which used to flatten the deck into a
      static vertical page. Calm mode is now opt-in: add ?calm=1 to the link for the still version. */
@@ -188,6 +197,14 @@ img{max-width:100%}
   </defs>
 </svg>
 
+<div class="gate" role="dialog" aria-label="Open on a larger screen">
+  <div>
+    <svg viewBox="0 0 60 60" width="72" aria-hidden="true"><use href="#parcel" transform="translate(30 46) scale(1.5)"/></svg>
+    <p>Open this on your laptop or tablet</p>
+    <small>This presentation is built for a bigger screen.</small>
+  </div>
+</div>
+
 <main>
 <!-- =====================================================================
   ARCHITECTURE SHELL: HORIZONTAL, "the scroll painting"
@@ -234,6 +251,10 @@ img{max-width:100%}
   html.hz-on main > section::before,html.hz-on main > section::after{content:"";flex:1 0 0px}
   html.hz-on main > section.band{padding-top:clamp(32px,6vh,60px) !important;padding-bottom:clamp(32px,6vh,60px) !important}
   html.hz-on main > section .band-head{margin-bottom:clamp(22px,3.6vh,40px)}
+  /* the phone gate wins over the track */
+  @media (max-width:539px),(pointer:coarse) and (max-height:499px){html.arch-horizontal:not(.no-gate) main{display:none}}
+  html.arch-horizontal.phone main{display:none}
+
   /* ---- Fit levels, set only on panels that overflow (first that fits wins) ----
      1 tighter type and spacing · 2 plus a 1000px column · 3 head beside visual · 4 that, tighter
      5 an 860px column · 6 a 760px column */
@@ -276,6 +297,7 @@ img{max-width:100%}
   .hz-mark.done i{background:var(--paper);box-shadow:none}
   .hz-mark.now i{background:var(--paper);box-shadow:none;scale:1.45}
   .hz-mark:focus-visible{outline:2px solid var(--paper);outline-offset:-4px;border-radius:50%}
+  @media (max-width:539px),(pointer:coarse) and (max-height:499px){html.hz-on .hz-rail{display:none}}
 </style>
 
 <div class="hz-ground" aria-hidden="true">
@@ -289,9 +311,8 @@ img{max-width:100%}
 <script>
 (() => {
   const root = document.documentElement;
-  /* phones (narrow, or landscape-short touch screens) get the ordinary vertical page instead of the sideways track */
-  const GATE = '(max-width:719px), (pointer:coarse) and (max-height:499px)';
-  const wide = () => !(reduce || /[?&]final=1/.test(location.search)) && innerWidth >= 720 && !matchMedia(GATE).matches;
+  const GATE = '(max-width:539px), (pointer:coarse) and (max-height:499px)';
+  const wide = () => !(reduce || /[?&]final=1/.test(location.search)) && innerWidth >= 720 && !matchMedia(GATE).matches && !root.classList.contains('phone');
   root.classList.add('arch-horizontal');
   root.classList.toggle('hz-on', wide());
 
